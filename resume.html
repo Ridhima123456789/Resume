@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ridhima Kapoor | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #111827;
+      --secondary: #4b5563;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --border: #e5e7eb;
+      --shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #eef4ff 0%, #f8fafc 100%);
+      color: var(--primary);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .resume-container {
+      max-width: 1100px;
+      margin: auto;
+      background: var(--card);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+      color: white;
+      padding: 45px 35px;
+      position: relative;
+    }
+
+    .sidebar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #3b82f6, #60a5fa);
+    }
+
+    .profile {
+      margin-bottom: 40px;
+    }
+
+    .profile h1 {
+      font-size: 2.4rem;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .profile p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      margin-top: 35px;
+    }
+
+    .contact-item {
+      margin-bottom: 18px;
+    }
+
+    .contact-item span {
+      display: block;
+      color: #93c5fd;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 3px;
+    }
+
+    .contact-item a,
+    .contact-item p {
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+
+    .sidebar-section {
+      margin-top: 45px;
+    }
+
+    .sidebar-section h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+      color: #93c5fd;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .main-content {
+      padding: 50px;
+    }
+
+    .section {
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+      position: relative;
+      padding-left: 18px;
+      color: var(--primary);
+    }
+
+    .section-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 6px;
+      height: 24px;
+      background: var(--accent);
+      border-radius: 8px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(37,99,235,0.08);
+      border-color: #bfdbfe;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card-header h4 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .subtext {
+      color: var(--secondary);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 18px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #eff6ff, #f8fbff);
+      border: 1px solid #bfdbfe;
+      border-radius: 20px;
+      padding: 26px;
+    }
+
+    .highlight-box p {
+      color: #374151;
+      font-size: 1rem;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .achievement-card {
+      background: #f9fbff;
+      border: 1px solid #dbeafe;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .achievement-card h5 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    .achievement-card p {
+      color: #4b5563;
+      font-size: 0.93rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .resume-container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar::after {
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        top: auto;
+      }
+
+      .main-content {
+        padding: 35px 25px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      .profile h1 {
+        font-size: 2rem;
+      }
+
+      .card,
+      .highlight-box {
+        padding: 18px;
+      }
+
+      .main-content {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-container">
+
+    <aside class="sidebar">
+      <div class="profile">
+        <h1>Ridhima Kapoor</h1>
+        <p>Incoming Data Science & AI Student passionate about building impactful technology solutions.</p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-item">
+          <span>Location</span>
+          <p>Gurugram, India</p>
+        </div>
+
+        <div class="contact-item">
+          <span>Phone</span>
+          <p>+91 98189 60039</p>
+        </div>
+
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:ridhimakapoornano@gmail.com">ridhimakapoornano@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <span>Portfolio</span>
+          <a href="https://ridhima123456789.github.io/Profile/" target="_blank">
+            View Profile Website
+          </a>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Technical Skills</h3>
+        <div class="skills-list">
+          <div class="skill">Python</div>
+          <div class="skill">OpenCV</div>
+          <div class="skill">Keras</div>
+          <div class="skill">NLP</div>
+          <div class="skill">AI/ML</div>
+          <div class="skill">Computer Vision</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Interpersonal Skills</h3>
+        <div class="skills-list">
+          <div class="skill">Leadership</div>
+          <div class="skill">Public Speaking</div>
+          <div class="skill">Event Management</div>
+          <div class="skill">Networking</div>
+          <div class="skill">Team Coordination</div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Core Interests</h3>
+        <div class="skills-list">
+          <div class="skill">AI for Social Impact</div>
+          <div class="skill">Data Science</div>
+          <div class="skill">Innovation</div>
+          <div class="skill">Entrepreneurship</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="section">
+        <h2 class="section-title">About</h2>
+        <div class="highlight-box">
+          <p>
+            Passionate student innovator focused on Artificial Intelligence, Machine Learning, and technology-driven social impact. Experienced in leading projects, managing events, and representing India on global platforms through innovation and youth leadership initiatives.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h4>Masters' Union</h4>
+              <p class="subtext">Bachelor's in Data Science & Artificial Intelligence</p>
+            </div>
+            <span class="tag">Incoming 2026</span>
+          </div>
+          <p>
+            Focused on Machine Learning, Data Analytics, and AI applications in business and society.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h4>DAV Public School, Sector 14, Gurugram</h4>
+              <p class="subtext">Senior Secondary Education – Science Stream</p>
+            </div>
+          </div>
+          <p>
+            Coursework included Physics, Chemistry, Mathematics, Computer Science, and English.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Key Achievements</h2>
+
+        <div class="achievement-grid">
+          <div class="achievement-card">
+            <h5>National Youth Festival</h5>
+            <p>Ranked 2nd nationwide at the Science Exhibition and awarded ₹1.13 lakh.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h5>1M1B Changemaker</h5>
+            <p>Selected among the Top 101 Changemakers in India and represented India at the UN Summit, Geneva.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h5>Harvard VISION</h5>
+            <p>Secured 2nd Prize at Harvard College VISION Global Health & Leadership Conference.</p>
+          </div>
+
+          <div class="achievement-card">
+            <h5>Published Author</h5>
+            <p>Author of <em>Glitch Glitch Glitches</em>, recognized as a monthly bestseller by Bribooks.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Kavach – AI Wildlife Detection System</h4>
+            <span class="tag">Computer Vision</span>
+          </div>
+          <p>
+            Built a Computer Vision model using Python and Keras with a real-time alert GUI to detect dangerous wild animals near roads and residential areas.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Land Legal Bot (LLB)</h4>
+            <span class="tag">AI Chatbot</span>
+          </div>
+          <p>
+            Engineered an AI chatbot simplifying real estate legal procedures and won 1st place at Conclave Edge among 50+ schools.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>AI-Based Home Security & Automation System</h4>
+            <span class="tag">Smart Automation</span>
+          </div>
+          <p>
+            Designed an AI-enabled surveillance and automation system showcased at the CBSE Skill Expo.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>AI-Powered Excuse Generator</h4>
+            <span class="tag">NLP</span>
+          </div>
+          <p>
+            Developed an NLP-based application during an AI mentorship programme in collaboration with IIT Kharagpur.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Leadership & Awards</h2>
+
+        <div class="card">
+          <ul>
+            <li>School Prefect (Class XII), leading student initiatives and representing the student body.</li>
+            <li>Event Head, ACON 4.0 and Coordinator, ACON 3.0; managed 500+ delegates.</li>
+            <li>Recipient of Bhashadoot Samman by the Ministry of Culture for excellence in Sanskrit.</li>
+            <li>Recognized by IBM SkillsBuild at CSR Annual Event for project showcase.</li>
+            <li>Awarded Certificate of Leadership at Viksit Bharat Young Leader Dialogue.</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        Designed with HTML5 & CSS3 • Crafted for a modern professional portfolio experience.
+      </footer>
+
+    </main>
+  </div>
+
+</body>
+</html>
